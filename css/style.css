@@ -1890,3 +1890,236 @@ img.skill-icon, img.skill-logo {
     font-size: 1rem;
   }
 }
+
+/* ============================================
+   Contact Page Styles
+   ============================================ */
+
+/* Contact Hero Section */
+.contact-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg) 0%,
+    var(--color-bg-secondary) 50%,
+    var(--color-bg) 100%
+  );
+}
+
+.contact-hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+}
+
+.contact-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3xl);
+  line-height: 1.6;
+}
+
+/* Social Links Grid */
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-3xl);
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  padding: var(--space-xl);
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(107, 124, 125, 0.05) 100%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.social-card:hover::before {
+  opacity: 1;
+}
+
+.social-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-lg);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.social-icon-wrapper iconify-icon {
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.social-info {
+  text-align: center;
+  flex: 1;
+}
+
+.social-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+.social-info p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* LinkedIn specific styling */
+.social-card.linkedin .social-icon-wrapper {
+  background: rgba(0, 119, 181, 0.1);
+  color: #0077b5;
+}
+
+.social-card.linkedin:hover .social-icon-wrapper {
+  background: rgba(0, 119, 181, 0.2);
+  transform: scale(1.1);
+}
+
+/* GitHub specific styling */
+.social-card.github .social-icon-wrapper {
+  background: rgba(36, 41, 46, 0.1);
+  color: #24292e;
+}
+
+.social-card.github:hover .social-icon-wrapper {
+  background: rgba(36, 41, 46, 0.2);
+  transform: scale(1.1);
+}
+
+/* Instagram specific styling */
+.social-card.instagram .social-icon-wrapper {
+  background: linear-gradient(45deg, 
+    rgba(225, 48, 108, 0.1) 0%, 
+    rgba(255, 214, 0, 0.1) 100%
+  );
+  color: #e1306c;
+}
+
+.social-card.instagram:hover .social-icon-wrapper {
+  background: linear-gradient(45deg, 
+    rgba(225, 48, 108, 0.2) 0%, 
+    rgba(255, 214, 0, 0.2) 100%
+  );
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Contact Page */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .social-links-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+  }
+  
+  .social-card {
+    padding: var(--space-lg);
+  }
+  
+  .social-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-right: var(--space-md);
+  }
+  
+  .social-icon-wrapper iconify-icon {
+    font-size: 1.5rem;
+  }
+  
+  .social-info h3 {
+    font-size: 1.25rem;
+  }
+  
+  .social-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    padding: var(--space-xl) 0;
+  }
+  
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .social-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+  
+  .social-icon-wrapper {
+    margin-right: 0;
+    margin-bottom: var(--space-md);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .social-icon-wrapper iconify-icon {
+    font-size: 1.75rem;
+  }
+}
